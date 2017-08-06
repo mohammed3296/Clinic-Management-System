@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E37C69B4-AFBD-47A2-9631-BBE681788EC1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Clinic_Management_System</RootNamespace>
+    <AssemblyName>Clinic Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IrisSkin2">
+      <HintPath>D:\ادواتي البرمجية\ثيمات\IrisSkin2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\Connector.NET 6.9\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\clsStaff.cs" />
+    <Compile Include="BL\CLS_Login.cs" />
+    <Compile Include="BL\CLS_MainForm.cs" />
+    <Compile Include="BL\CLS_Patient.cs" />
+    <Compile Include="BL\clsCheckType.cs" />
+    <Compile Include="BL\CLS_ServerSettings.cs" />
+    <Compile Include="Data Access Layer\Connection.cs" />
+    <Compile Include="PL\Form_ADD_USER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Form_ADD_USER.Designer.cs">
+      <DependentUpon>Form_ADD_USER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Form_manage_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Form_manage_user.Designer.cs">
+      <DependentUpon>Form_manage_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_add_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_add_user.Designer.cs">
+      <DependentUpon>Frm_add_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_users.Designer.cs">
+      <DependentUpon>Frm_users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\MoafaMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\MoafaMessageBox.Designer.cs">
+      <DependentUpon>MoafaMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frmChekup_Type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmChekup_Type.Designer.cs">
+      <DependentUpon>frmChekup_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frm_Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frm_Restore.designer.cs">
+      <DependentUpon>frm_Restore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frmServerSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmServerSetting.Designer.cs">
+      <DependentUpon>frmServerSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frm_add_supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frm_add_supplier.Designer.cs">
+      <DependentUpon>frm_add_supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frm_Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frm_Backup.Designer.cs">
+      <DependentUpon>frm_Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frm_Clinic_information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frm_Clinic_information.designer.cs">
+      <DependentUpon>frm_Clinic_information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frm_Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frm_Supplier.Designer.cs">
+      <DependentUpon>frm_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frmStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmStaff.Designer.cs">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frm_Add_Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frm_Add_Patient.designer.cs">
+      <DependentUpon>frm_Add_Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frm_Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frm_Patient.designer.cs">
+      <DependentUpon>frm_Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Log_in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Log_in.Designer.cs">
+      <DependentUpon>Log_in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Main_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Main_Form.Designer.cs">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PL\StaffAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\StaffAddForm.designer.cs">
+      <DependentUpon>StaffAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\StaffSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\StaffSearchForm.designer.cs">
+      <DependentUpon>StaffSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BL\Supplier.cs" />
+    <Compile Include="UC\UCStaff\ucManageStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCStaff\ucManageStaff.Designer.cs">
+      <DependentUpon>ucManageStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCStaff\ucNewStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCStaff\ucNewStaff.Designer.cs">
+      <DependentUpon>ucNewStaff.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PL\Form_ADD_USER.resx">
+      <DependentUpon>Form_ADD_USER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Form_manage_user.resx">
+      <DependentUpon>Form_manage_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_add_user.resx">
+      <DependentUpon>Frm_add_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_users.resx">
+      <DependentUpon>Frm_users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frm_Restore.resx">
+      <DependentUpon>frm_Restore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\MoafaMessageBox.resx">
+      <DependentUpon>MoafaMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frmChekup_Type.resx">
+      <DependentUpon>frmChekup_Type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frmServerSetting.resx">
+      <DependentUpon>frmServerSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frm_add_supplier.resx">
+      <DependentUpon>frm_add_supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frm_Backup.resx">
+      <DependentUpon>frm_Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frm_Clinic_information.resx">
+      <DependentUpon>frm_Clinic_information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frm_Supplier.resx">
+      <DependentUpon>frm_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frmStaff.resx">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frm_Add_Patient.resx">
+      <DependentUpon>frm_Add_Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frm_Patient.resx">
+      <DependentUpon>frm_Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Log_in.resx">
+      <DependentUpon>Log_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Main_Form.resx">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="PL\StaffAddForm.resx">
+      <DependentUpon>StaffAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\StaffSearchForm.resx">
+      <DependentUpon>StaffSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCStaff\ucManageStaff.resx">
+      <DependentUpon>ucManageStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCStaff\ucNewStaff.resx">
+      <DependentUpon>ucNewStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_system-search_118797.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Technology_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apply_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hide_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Show_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apply_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\design.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\design1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Invisible_40px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visible_40px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock_50px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checked_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checked_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_system-search_118797 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_1-04_511562.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Add_character_include_more_person_user_1886171.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_sign-up_49622.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Menu-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Clinic-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Select All-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Add-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Edit-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Delete-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accessories-text-editor-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Shutdown-16 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Shutdown-16 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_user_285655.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Christmas_Date_1651916.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Watch_701487.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_plus_1646001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Edit Row-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Edit Row-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Delete-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Edit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Plus-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_male.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
